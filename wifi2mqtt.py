@@ -41,7 +41,7 @@ def fetch_hosts_from_ap(login, user, pw):
 
 def send_to_mqtt(mqtt_broker, mqtt_auth, hosts):
     doc = json.dumps({ "online": hosts, "_timestamp": str(datetime.datetime.now())})
-    publish.single(topic="sensors/wifi/online", payload=doc, hostname=mqtt_broker, auth=mqtt_auth, retain=True)
+    publish.single(topic="sensors/wifi/online", payload=doc, hostname=mqtt_broker, auth=mqtt_auth, retain=False)
 
 # disable warnings
 warnings.filterwarnings('ignore', 'Unverified HTTPS request')
