@@ -8,7 +8,7 @@ import sys
 
 def wifi_host_count(url):
   response = requests.get(url)
-  if response.status_code != requests.code.ok:
+  if response.status_code != 200:
     return 0
 
   match = re.search('(?<=active_wireless::).*?(?=})', response.text)
