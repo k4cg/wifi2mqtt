@@ -21,7 +21,7 @@ def send_to_mqtt(mqtt_broker, mqtt_auth, hosts):
   publish.single(topic="sensors/wifi/online", payload=doc, hostname=mqtt_broker, auth=mqtt_auth, retain=False)
 
 def main():
-  info_url = 'https://192.168.178.2/Info.live.htm'
+  info_url = 'http://192.168.178.2/Info.live.htm'
   mqtt_broker = "localhost"
   mqtt_auth = {'username': sys.argv[1], 'password': sys.argv[2]}
 
